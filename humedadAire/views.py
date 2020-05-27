@@ -15,13 +15,13 @@ def humedadAire(request):
             # Crea el json para realizar la petición POST al Web Service
             args = {"type": 'humedad', 'value': value, 'latitude': latitud, 'longitude': longitud, 'terrain' : terreno }
             #response = requests.post('http://127.0.0.1:8000/humedadAire/', args)
-            response = requests.post('https://pi1-eafit-tello-back.azurewebsites.net/', args)
+            response = requests.post('https://pi1-eafit-tello-back.azurewebsites.net/humedadAire/', args)
             # Convierte la respuesta en JSON
             humedadAire_json = response.json()
 
     # Realiza una petición GET al Web Services
     # response = requests.get('http://127.0.0.1:8000/humedadAire/')
-    response = requests.get('https://pi1-eafit-tello-back.azurewebsites.net/')
+    response = requests.get('https://pi1-eafit-tello-back.azurewebsites.net/humedadAire/')
 
     # Convierte la respuesta en JSON
     humedadAirelist = response.json()
