@@ -2,13 +2,19 @@
 {% block content %}
 <div class="container">
     <form method="get">
-        <input type="number" name="value">
+        Humedad  <input type="number" name="value">
+        Latitud  <input type="float " name="latitude">
+        Longitud  <input type="float" name="longitude">
+        Tipo de terreno  <input type="String" name="terrain">
         <button type="submit">Adicionar</button>
     </form>
     </form>
     {% for humedadAire in humedadAirelist %}
     <ul class="list-group">
-        <li class="list-group-item">{{humedadAire.value}}</li>
+        <li class="list-group-item">{{humedadAire.type}} = {{humedadAire.value}}%</li>
+        <li class="list-group-item">   Latitud = {{humedadAire.latitude}} </li>
+        <li class="list-group-item">   Longitud = {{humedadAire.longitude}} </li>
+        <li class="list-group-item">   Tipo de Terreno = {{humedadAire.terrain}}</li>
     </ul>
     {% endfor %}
 </div>
